@@ -156,7 +156,8 @@ function callSendAPI(sender_psid, response) {
 function firstTrait(nlp, name) {
   console.log(
     "first trait-----",
-    nlp && nlp.entities && nlp.traits[name] && nlp.traits[name][0]
+    nlp && nlp.entities && nlp.traits[name] && nlp.traits[name][0],
+    nlp
   );
   return nlp && nlp.entities && nlp.traits[name] && nlp.traits[name][0];
 }
