@@ -154,13 +154,17 @@ function callSendAPI(sender_psid, response) {
 // }
 
 function firstTrait(nlp, name) {
+  console.log(
+    "first trait-----",
+    nlp && nlp.entities && nlp.traits[name] && nlp.traits[name][0]
+  );
   return nlp && nlp.entities && nlp.traits[name] && nlp.traits[name][0];
 }
 
 function handleMessage(sender_psid, message) {
   //handle message for react, like press like button
   // id like button: sticker_id 369239263222822
-
+  console.log("message : ", message);
   if (message && message.attachments && message.attachments[0].payload) {
     callSendAPI(sender_psid, "Thank you for watching my video !!!");
     callSendAPIWithTemplate(sender_psid);
