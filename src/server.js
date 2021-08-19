@@ -10,14 +10,14 @@ let app = express();
 viewEngine(app);
 
 //use body-parser to post data
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // init all web routes
 initWebRoute(app);
 
 let port = process.env.PORT || 8080;
 
-app.listen(port, ()=>{
-   console.log(`App is running at the port ${port}`) ;
+app.listen(port, () => {
+  console.log(`App is running at the port ${port}`);
 });
