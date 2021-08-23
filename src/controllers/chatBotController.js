@@ -160,6 +160,7 @@ function firstTrait(nlp, name) {
     nlp && nlp.entities && nlp.traits[name] && nlp.traits[name][0],
     nlp
   );
+  console.log("message ++++++++:", message);
   return nlp && nlp.entities && nlp.traits[name] && nlp.traits[name][0];
 }
 
